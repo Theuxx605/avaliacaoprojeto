@@ -1,0 +1,41 @@
+body {
+    background-image: url('https://cobasiblog.blob.core.windows.net/production-ofc/2021/08/4-1.png');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Roboto', sans-serif;
+    margin: 270px;
+    padding: 0;
+}
+
+.titulo {
+    text-align: center;
+    margin-top: 260px;
+}
+
+
+.titulo{
+    font-size: 3em;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.titulo:first-letter{
+    color: red;
+}
+
+
+.menu-link {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.menu-link a {
+    padding: 15px 30px;
+    background-color: #FF5733;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 1.2em;
+}
