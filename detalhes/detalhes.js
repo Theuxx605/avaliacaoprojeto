@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   }
 
-  // Validação dos formulários
   const formularios = document.querySelectorAll(".promo-form");
 
   formularios.forEach(form => {
