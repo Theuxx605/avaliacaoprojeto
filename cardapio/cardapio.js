@@ -45,14 +45,25 @@ const cardapio = [
 
 const container = document.querySelector(".produtos");
 
-cardapio.forEach(produto => {
-  const card = document.createElement("div");
-  card.className = "produto-card";
-  card.innerHTML = `
-    <img src="${produto.imagem}" alt="${produto.nome}">
-    <h3>${produto.nome}</h3>
-    <p>${produto.descricao}</p>
-    <a href="${produto.detalhesUrl}" class="btn-detalhes">Ver Detalhes</a>
-  `;
-  container.appendChild(card);
-});
+const meuRestaurante = "Bonsai Sushibar"; 
+
+fetch("https://tech4japa.fly.dev/produtos")
+  .then(response => response.json())
+  .then(produtos => {
+    const meusProdutos = produtos.filter(p => p.restaurante === meuRestaurante);
+
+    meusProdutos.forEach(produto => {
+      const card = document.createElement("div");
+      card.className = "produto-card";
+      card.innerHTML = `
+        <img src="${produto.imagem}" alt="${produto.nome}">
+        <h3>${produto.nome}</h3>
+        <p>${produto.descricao}</p>
+        <a href="/detalhes/detalhes.html#${produto.produto}" class="btn-detalhes">Ver Detalhes</a>
+      `;
+      container.appendChild(card);
+    });
+  })
+  .catch(error => {
+    console.error("Erro ao buscar produtos da API:", error);
+  });
